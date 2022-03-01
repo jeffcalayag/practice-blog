@@ -3,12 +3,14 @@ const app = express();
 const ejs = require('ejs');
 const port = process.env.PORT || 3000;
 
+const posts = [];
+
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
-  res.render("homepage");
+  res.render("homepage", {addToHome: posts});
 });
 
 app.get("/about", function(req, res) {
@@ -25,6 +27,12 @@ app.get("/compose", function(req , res) {
 
 app.post("/compose", function(req, res) {
   console.log(req.body);
+  const newPost = {
+    title: req.body.title,
+    content: req.body.content
+  };
+
+  posts.push(newPost);
   res.redirect("/");
 })
 

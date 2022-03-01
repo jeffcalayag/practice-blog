@@ -2,6 +2,9 @@
   <h1>Home</h1>
   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum venenatis sodales. Donec in ipsum a quam bibendum placerat eu non sem. Quisque quis nisl vel mauris fermentum dignissim id vitae elit. Aenean eu magna hendrerit tortor tincidunt efficitur. Suspendisse rhoncus fringilla feugiat. Phasellus quis mi id turpis fermentum sodales. Morbi ac arcu tristique, ullamcorper orci vel, rutrum lacus. Aliquam porta sagittis nunc vel fringilla. Morbi aliquam lorem ipsum. Sed malesuada risus vel urna feugiat malesuada. Duis id ligula iaculis, pulvinar neque eu, efficitur lectus. Vestibulum sit amet neque vehicula, bibendum tortor et, placerat sapien. Ut quis molestie urna, vitae vulputate enim. Duis bibendum faucibus lorem ut tincidunt. </p>
 
-  
+  <% addToHome.forEach(function(post) { %>
+      <h1><%= post.title %></h1>
+      <p><%= post.content %></p>
+  <% }); %>
 
 <%- include('partials/footer') -%>
