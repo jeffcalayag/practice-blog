@@ -1,0 +1,32 @@
+body {
+  background-color: #E0DDAA;
+}
+
+.body-margin {
+  margin: 5rem;
+}
+
+.nav-font {
+  font-size: 20px;
+  letter-spacing:5px;
+  color: white;
+}
+
+.navbar-custom {
+  padding: 15px 20px 15px 20px;
+  background-color: #203239;
+}
+
+footer {
+  position: absolute;
+  background-color: #203239;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
