@@ -26,14 +26,13 @@ app.get("/compose", function(req , res) {
 });
 
 app.get("/posts/:postTitle", function(req, res) {
-  const paramTitle = req.params.title;
-
+  const paramTitle = req.params.postTitle;
 
   posts.forEach(function(post) {
-    const storedTitle = req.body.title;
+    const storedTitle = post.title;
 
     if(paramTitle == storedTitle) {
-      res.render("post", {openPost: post});
+      res.render("blog-page", {openPost: post});
     }
   })
 });
