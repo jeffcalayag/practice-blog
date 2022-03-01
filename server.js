@@ -25,6 +25,19 @@ app.get("/compose", function(req , res) {
   res.render("compose");
 });
 
+app.get("/posts/:postTitle", function(req, res) {
+  const paramTitle = req.params.title;
+
+
+  posts.forEach(function(post) {
+    const storedTitle = req.body.title;
+
+    if(paramTitle == storedTitle) {
+      res.render("post", {openPost: post});
+    }
+  })
+});
+
 app.post("/compose", function(req, res) {
   console.log(req.body);
   const newPost = {
